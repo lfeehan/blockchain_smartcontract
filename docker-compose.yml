@@ -1,0 +1,13 @@
+version: "3"
+services:
+
+  contract-deploy:
+    container_name: contract-deploy
+    build:
+      context: ./
+      args:
+        http_proxy: $http_proxy
+        https_proxy: $https_proxy
+    environment:
+      PROVIDER_URI: http://your_blockchain_here:8545
+      PASSWORD: your_account_password
